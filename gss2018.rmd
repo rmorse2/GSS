@@ -40,6 +40,7 @@ This data is from the 2018 General Social Survey. The first blocks of R-code has
 
 
 ## Methods
+
 It depends on the two variables options. 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
@@ -48,9 +49,11 @@ It depends on the two variables options.
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ### Descriptive Results
+
 p-value = 0.01651
 
 #### Graphical Descriptive Results
+
 That more people favor death penalty that dont own a gun and more people that dont own a gun opose to death penalty.
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 ```{r}
@@ -58,6 +61,7 @@ barchartGC(~CAPPUN + OWNGUN,data=mydata4)
 ```
 
 #### Numerical Descriptive Results
+
 More people that own a gun believe in death penalty. 
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
@@ -68,7 +72,8 @@ colPerc(table1)
 ```
 
 ### Inferential Results
-My hopethsis is that more people that own a gun belive in death penalty rather then people that dont own a gun out of the stats they gave us. 
+
+My hopethsis is that more people that own a gun belive in death penalty rather then people that dont own a gun out of the stats they gave us. The vaule is 0.02% so it isnt accurate.
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 ```{r}
 chisq.test(table1)
@@ -92,16 +97,21 @@ It depends on the two variables options.
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ### Descriptive Results
+
 p-value = 0.07143
 
 #### Graphical Descriptive Results
+
 The graphical results show that more people that belive in postlife belive bigbang but more people that dont believe in postlife believe in god.
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 ```{r}
 barchartGC(~BIGBANG + POSTLIFE,data=mydata4)
 ```
+
+
 #### Numerical Descriptive Results
+
 The numerical results that more people that dont believe in the bigbang theory believe in god.
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
@@ -112,7 +122,8 @@ colPerc(table2)
 ```
 
 ### Inferential Results
-The hypothesis is it does not show enough evidence to know if people that belive in postlife also believe in the big bang theory.
+
+The hypothesis is it does not show enough evidence to know if people that belive in postlife also believe in the big bang theory. the vaule is less then 1% so it isnt very accurate. 
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 ```{r}
@@ -128,6 +139,7 @@ fisher.test(table2)
 Finally determine if a persons opinion on death penalty (CAPPUN) is independent of their race (RACE).
 
 ## Methods
+
 It depends on the two variables options.
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
@@ -136,11 +148,13 @@ It depends on the two variables options.
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ### Descriptive Results
+
 Chi-Square Statistic = 14.0272 
 Degrees of Freedom of the table = 2 
 P-Value = 9e-04 which is a 0% 
 
 #### Graphical Descriptive Results
+
 Black people are more opposed to the death penality then other races.
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
@@ -149,7 +163,8 @@ barchartGC(~CAPPUN + RACE,data=mydata4)
 ```
 
 #### Numerical Descriptive Results
-79.31 do favorthat are white and 65.38 that are black oppose. 
+
+79.31 do favor that are white and 65.38 that are black oppose. 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 ```{r}
 table3 <- xtabs(~CAPPUN + RACE, data=mydata4)
@@ -158,7 +173,8 @@ colPerc(table3)
 ```
 
 ### Inferential Results
-My hypothesis would be white race believe in death penality thew most and black does oppose the most. 
+
+My hypothesis would be white race believe in death penality thew most and black does oppose the most according to the p vaule 9E-04
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 ```{r}
@@ -169,6 +185,7 @@ chisqtestGC(table3)
 
 
 # Discussion and Conclusion
+
 of all the tables only one had enough evidence which was the first table buit the other two did not show enough evidence. Over all you cant actually know if its true or false its all opinionated. 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
